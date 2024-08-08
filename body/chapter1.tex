@@ -1,44 +1,127 @@
 \chapter[From Parton Model to TMDs]{From Parton Model to TMDs}
-Lorem ipsum dolor sit amet\footnote{first foot note}, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque\footnote{another foot note} habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+In this chapter, I will explore the basic assumptions of the parton model and construct the definition of transverse-momentum-dependent parton distribution functions (TMD PDFs), which are the physical quantities we aim to infer from experimental data.
 
-\section[Parton Model Assumptions]{Section name for index}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui sem, aliquam id ultricies sit amet, fermentum at magna. Aenean vitae rhoncus leo. Fusce gravida consequat lacus, a porta risus bibendum semper. Morbi eget auctor velit. Pellentesque eu lacinia nisi. Maecenas sed orci eu erat porta imperdiet ac non dui. Pellentesque a odio ac quam euismod tempor. Nulla in dapibus mauris, a sodales ex. In imperdiet enim sed ornare sollicitudin. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vehicula metus eu nisi ornare euismod. Proin at ex non ex iaculis porta.
+\subsection[QCD Lagrangian and Asymptotic Freedom ]{QCD Lagrangian and Asymptotic Freedom}
+Hadrons, such as protons, are are composed of partons, quarks and gluons, which are in a confined state at our energy scale. The interactions between quarks and gluons are described by quantum chromodynamics (QCD) \cite{Peskin:1995ev}, a Yang-Mills theory that promote global $SU(3)$ invariance to a local invariance (\textit{i.e.} the QCD Lagrangian is invariant under local color transformation). Here, I present the QCD Lagrangian, including only one quark of mass $m$ and excluding ghost fields for simplicity \cite{Grinstein:2003zz} :
 
-Here I want to test\cite{einstein} some\cite{latexcompanion} quote\cite{knuthwebsite}
+\begin{equation}
+\label{eq:lagrangian_QCD}
+ \mathcal{L} = - \frac{1}{4} F_{\mu \nu}^aF^{a \mu \nu} + \bar{\psi}^i(i \slashed{D}_j^k - m\delta_j^k)\psi_k
+\end{equation}
 
-\subsection[Subsection name]{Subsection name for index}
-Nulla interdum molestie bibendum. Quisque condimentum justo quis lectus pretium, eget porttitor odio elementum. In dignissim sed justo et congue. In pulvinar feugiat odio eu vehicula. In ut malesuada est, sit amet porttitor dolor. Donec ullamcorper libero eros, vitae blandit nibh pellentesque quis. Aliquam aliquet ex id sapien lobortis, at molestie sem commodo. Donec quis accumsan lectus. Sed eget turpis id mi iaculis accumsan. Maecenas eget rutrum leo. Nam eu purus vitae lorem semper vestibulum. Phasellus mattis euismod faucibus. Vestibulum ornare sem a mattis placerat. Donec interdum blandit erat, eu iaculis risus cursus sed. Donec magna sem, finibus nec scelerisque nec, auctor in turpis.
+Where $a = 1, 2, ..., 8$ is the color index; $\psi \text{, }\bar{\psi}$ represent the fermion fields (quarks). The gauge-fields $A_{\mu}^a$ (gluons) are enclosed in the gauge-field strength tensor 
 
-\subsubsection[Subsubsection name]{Subsubsection name for index}
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+\begin{equation}
+\label{eq:gluon-strength_tensor}
+F_{\mu \nu}^a = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{abc} A_\mu^b A_\nu^c
+\end{equation}
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+and in the covariant derivative 
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
+\begin{equation}
+\label{eq:covariant_derivative}
+\slashed{D} = \gamma^{\mu} D_{\mu}  = \gamma^{\mu}(\partial_{\mu} - igA_{\mu}^a T^a)
+\end{equation}
 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+If we expand all terms of the Lagrangian we obtain the strong interaction terms:
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+\begin{equation}
+\label{eq:lagrangian_interactions}
+\mathcal{L} = \mathcal{L}_0 + g A_{\mu}^a \bar{\psi}\gamma^{\mu}T^a \psi + g f^{abc}(\partial_{\mu}A_{\nu}^a)A^{b\mu}A^{c\nu} - g^2  f^{eab}  f^{ecd} A_{\mu}^a A_{\nu}^b A^{c \mu} A^{d \nu}
+\end{equation}
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+It is interesting to note that all the terms in equation \eqref{eq:lagrangian_interactions} represent different types of interaction. The first term is the non-interacting contribution, the second term represent the interaction between two leptonic fields and a gluon, and the third and fourth terms represent the interactions between three and four gluon fields, respectively. All these terms are weighted by powers of the gauge coupling $g$. \\
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+From the QCD Lagrangian, we can deduce the Feynman rules for calculating amplitudes of elementary processes involving quarks and gluons in terms of the strong coupling, $\alpha_s = \frac{g^2}{4\pi}$. If $\alpha_s$ were a small constant, we would have some dominant processes (those with a small number of vertices) and some negligible higher order contribution, similar to the case of quantum electrodynamics (QED) where the amplitude of processes get smaller with an increasing number of vertices in the corresponding Feynman diagram. Unfortunately, the strong coupling is small only at high energy scales preventing us from developing a fully perturbative approach. This phenomenon is known as asymptotic freedom, the strong coupling $\alpha_s$  depends on the energy scale~\eqref{eq:alpha_strong}. At high energy (short distance interactions) the strong coupling becomes very small. As the particles get closer to each other they become more free, but as the distance increases (or, equivalently, the energy decreases), the strong coupling $\alpha_s$ increases. 
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+\begin{equation}
+\label{eq:alpha_strong}
+\alpha_s(Q) = \alpha_s (\mu)\frac{1}{1+\frac{b_0  \alpha_s (\mu) \ln(\frac{Q}{\mu})}{2\pi}}
+\end{equation}
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+If we consider the coupling running towards smaller energies, we can rewrite the previous expression as follows: 
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+\begin{equation}
+\label{eq:alpha_strong2}
+\alpha_s(Q) =\frac{1}{b_0  \ln(\frac{Q}{\Lambda})}
+\end{equation}
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
+for energies below $1 GeV$ the strong coupling diverges rapidly, with a pole at $\Lambda \propto 200 MeV$, causing the confinement of quarks.
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
-In lobortis augue porta dui venenatis sollicitudin. In sagittis quis ipsum non dictum. Sed tempus, quam non vehicula dictum, mauris nisl posuere metus, eu lobortis odio risus at dui. Nullam non ante vulputate nulla ultrices euismod eu a diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla nec augue a risus viverra mattis. Ut tincidunt egestas nulla at semper. Fusce pretium, leo quis consectetur viverra, arcu lectus ornare leo, quis commodo ex risus sit amet velit. Nullam finibus lorem in mi tincidunt, sed feugiat lectus tincidunt. In hac habitasse platea dictumst. Sed quis auctor odio, at sodales nunc. Donec vulputate massa sit amet dolor sollicitudin, vel pretium quam scelerisque. Nullam et massa eleifend, venenatis ante vitae, ornare libero. Suspendisse potenti. Nam ante lacus, porttitor vel turpis quis, pellentesque auctor velit.
+Asymptotic freedom is crucial for describing hadronic interactions, because it ensure us that we can use a perturbative approach to compute the amplitude of short range processes order by order. However, for a complete description of hadronic interactions we cannot consider only short distance interactions; we need to introduce some non-perturbative functions to parametrize that part of the process that we do not know how to predict. This approach was first introduced in the parton model, which is the argument of the next paragraph.
 
-Morbi eget elementum tellus. Sed varius lacus ac nulla maximus, et varius lacus varius. Nulla faucibus magna sit amet magna auctor, vitae placerat turpis imperdiet. Duis blandit bibendum tellus nec accumsan. Aliquam arcu nulla, efficitur vitae sodales eu, tincidunt ac tortor. Cras gravida vulputate porttitor. Etiam ornare est at efficitur convallis. Quisque pulvinar tellus pulvinar lacus tristique, bibendum dapibus velit ultricies. Suspendisse id faucibus dui. Sed quis convallis dui. Etiam aliquam suscipit eros id pellentesque. Aliquam a suscipit leo, sit amet convallis dui. Donec sed pretium quam. Mauris nec tincidunt mi, in feugiat quam.
 
-Sed convallis pulvinar dui et ullamcorper. Maecenas facilisis, ante a tristique convallis, nunc ipsum fermentum odio, a auctor ligula risus ut nibh. Praesent sit amet tempus metus. Proin enim ipsum, mollis in nunc sed, tempus tempor magna. Nam ultricies lacus et porttitor bibendum. Suspendisse sit amet placerat nibh. Curabitur rutrum massa eu tortor sodales iaculis. Mauris sit amet odio eget velit tempus auctor. Pellentesque nec posuere neque. Nam in orci vehicula, ullamcorper sapien quis, pellentesque mauris. Sed eu porta ex. 
+\subsection[The Parton Model]{The Parton Model}
+Historically, the parton model was introduced before the theory of QCD to explain the results of the SLAC-MIT experiment~\cite{Taylor:2000dg}, in which electrons and protons were scattered at energies up to $20 GeV$. This scattering experiment lead to the confirmation that the proton is not an elementary particle, instead it is composed by point-like particles, named partons by Feynman in 1968, these are the quarks of QCD. According to the parton model, introduced by Bjorken and Feynman, when an electron interacts with a proton at high energy, the interaction occur between the electron and one of the proton fundamental constituents, which carries a fraction $\xi$ of the total momentum of the proton. After the parton-electron interaction, the struck quark interacts with the other partons on a much larger time scale and the proton breaks up.
+
+To explain the basic assumptions of the parton model, I will consider a process of Deep Inelastic Scattering (DIS, $\ell(k) p(P)  \to \ell(k') X$), in which an high energy electron scatters off a proton target (Figure~\ref{fig:DIS}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=\textwidth]{Images/chapter1/DIS.png}
+\caption{DIS $\ell(k) p(P)  \to \ell(k') X$}
+\label{fig:DIS}
+\end{center}
+\end{figure}
+
+We can make some heuristic assumptions for this process:
+\begin{enumerate}
+\item the proton is composed by a collection of point-like particles (partons)
+\item the partons move all in the same direction, longitudinal to the moving direction of the proton. This is of course an approximation, we neglect the transverse components because, in the center of mass reference system, the proton is moving at high speed along only one axis
+\item each parton carries a fraction $\xi$ of the longitudinal momentum of the proton $P$, the longitudinal momentum of the parton will be $p = \xi P$
+\item the partons are free particles (they do not interact with each other), the interaction occur between the electron $e$ and one single parton $q_i$: $e(k) q_i(p) \to e(k') q_i(p')$
+\end{enumerate}
+
+The last assumption is crucial, but is hard to believe. As we know, the interaction between two quarks (strong interaction) should be much stronger than the interaction between a quark and an electron (electromagnetic interaction), how come that we can approximate partons as free particles? The answer comes from QCD and asymptotic freedom: when we consider an high energy interaction (with large transverse momentum of the final state particles), we are in an energy region in which the strong coupling is weak, and the electromagnetic interaction dominates. A more intuitive argument can be given to justify the assumption that quarks are free particles \cite{CTEQ:1994ydo} \cite{Collins:2003fm}: we consider the time scale of the interaction binding two quarks to be $\tau_1 \propto 1 \frac{fm}{c}$ and the time scale of the quark-electron interaction at energy $Q$ to be $\tau_2 \propto \frac{1}{Qc}$. In the center of mass frame the time $\tau_1$ dilates and becomes $\tau_1' = \tau_1(1-\frac{v^2}{c^2}) >> \tau_1$. As an example, if we take an event at $\sqrt{s} = 300 GeV$ we get $\tau_1' \propto 100 \frac{fm}{c}$ and $\tau_2 \propto 0.01\frac{fm}{c}$. It is therefore a reasonable approximation, in the time scale of the parton-electron interaction, to treat the quarks as 'frozen' states with a momentum of $p=\xi P$. \\
+
+Using these assumptions, one can reconstruct the elementary cross section, $$\hat{\sigma}(e(k)q_i(p) \to e(k') q_i(p')$$ order by order in perturbative QCD; for example, the tree level elementary cross section will be the same as the cross section for the leptonic process $e(k) \mu(p) \to e(k') \mu(p')$, with the only difference that the considered quark $q_i$ has a different charge than the muon $\mu$.
+
+\subsubsection{Deep Inelastic Scattering Kinematics}
+To define the DIS cross section, we have to define the kinematics of the process in figure~\ref{fig:DIS}. Consider the electron-proton collision $$e(k)p(P) \to e(k') X$$ in which $X$ represent an hadronic final state that is not measured. We can define two Lorentz invariant quantities: $Q^2 = t = (-q)^2$ and $P \dot q$, where $P$ is the momentum of the initial state proton and $q = (k-k')$ is the space like exchanged momentum. Two useful combination of these quantities are 
+
+\begin{align}
+x_B &= \frac{Q^2}{2Pq} \\
+y     &= \frac{qP}{kP}
+\end{align}
+
+$x_B$ is the Bjorken variable and represents the fraction of the total momentum carried from the struck parton, $x_B=\xi = \frac{p}{P}$, $y$ represents the fraction of energy lost by the electron during the interaction, $\frac{E-E'}{E}$. Both variables lie between $0$ and $1$ and can be expressed in terms of the measurable quantities $k$, $k'$ and $P$. We have now all the ingredients to construct the hadronic cross section for deep inelastic scattering.
+
+\subsubsection[DIS cross section]{DIS Cross Section}
+We are able to compute with high precision the elementary cross section $\hat{\sigma}(e(k)q_i(p) \to e(k') q_i(p'))$, but we can not directly measure this short-range interaction, that means we do not know with which parton the electron interacts and neither we know the internal momentum distribution of the hadron. To address this problem we introduce the parton distribution functions (PDFs) $f_i(x)$. This function represents the probability that the i-th parton carries a fraction x of the total longitudinal momentum and is the link between the measured cross section and the elementary process (equation~\eqref{collinear_PDF}).
+
+\begin{equation}
+\label{collinear_PDF}
+\frac{d \sigma}{dt}(e(k)p(P) \to e(k') X) =\sum_i \int dx f_i(x) \frac{d\hat{\sigma}}{dt}(e(k)q_i(p) \to e(k') q_i(p')) 
+\end{equation}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
